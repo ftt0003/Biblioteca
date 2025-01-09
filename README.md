@@ -23,4 +23,12 @@ public Libro(){...}//Constructor vacio
 public Libro(String titulo,String isbn,...){...}//Construcotr con parametros
 ```
 ## Usuario
+### Atributos
+El usuario posee los siguientes atributos: <br>
+> [!NOTE]
+>  Todos los atributos deben ser privados
 
+- String::DNI
+- int::edad
+- int::infracciones
+- Libros[]::Libros  En este almacenaremos los distintos libros que tiene actualmente en prestamo el usuario.
