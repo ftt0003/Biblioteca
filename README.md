@@ -5,7 +5,7 @@ Se pretende generar un programa para gestionar los usuario y libros de un biblio
 ## Libro
 ### Atributos
 El libro posee los siguientes atributos: <br>
-> **Note:**
+> [!NOTE]
 >  Todos los atributos deben ser privados
 - Titulo
 - ISBN 
