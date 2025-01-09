@@ -18,15 +18,20 @@ public class Libro {
     public Libro(String titulo,String isbn, String autor, String editorial,
                  int edicion, int paginas, Categoria categoria){
         //TODO Antes de asingarle los valores a los atributos se debe verificar que son correctos
-        System.out.println(ValidadorDatosLibro.ValidarIsbn(isbn));
-        if(categoria == null) categoria = Categoria.SIN_CATEGORIZAR;
-        this.titulo =titulo;
-        this.isbn = isbn;
-        this.autor = autor;
-        this.editorial = editorial;
-        this.edicion = edicion;
-        this.paginas = paginas;
-        this.categoria = categoria;
+        if(ValidadorDatosLibro.ValidarIsbn(isbn)){
+            if(categoria == null) categoria = Categoria.SIN_CATEGORIZAR;
+            this.titulo =titulo;
+            this.isbn = isbn;
+            this.autor = autor;
+            this.editorial = editorial;
+            this.edicion = edicion;
+            this.paginas = paginas;
+            this.categoria = categoria;
+        }else{
+            this.autor = "Desconocido";
+            this.categoria = Categoria.SIN_CATEGORIZAR;
+        }
+
     }
 
     public Libro(Libro libro){
