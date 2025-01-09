@@ -31,4 +31,4 @@ El usuario posee los siguientes atributos: <br>
 - String :: DNI
 - int :: edad
 - int :: infracciones
-- Libros[] :: Libros  En este almacenaremos los distintos libros que tiene actualmente en prestamo el usuario.
+- Libros[ ] :: Libros  En este almacenaremos los distintos libros que tiene actualmente en prestamo el usuario.
