@@ -18,7 +18,7 @@ public class Libro {
     public Libro(String titulo,String isbn, String autor, String editorial,
                  int edicion, int paginas, Categoria categoria){
         //TODO Antes de asingarle los valores a los atributos se debe verificar que son correctos
-        if(ValidadorDatosLibro.ValidarIsbn(isbn)){
+        if(ValidadorDatos.ValidarIsbn(isbn)){
             if(categoria == null) categoria = Categoria.SIN_CATEGORIZAR;
             this.titulo =titulo;
             this.isbn = isbn;

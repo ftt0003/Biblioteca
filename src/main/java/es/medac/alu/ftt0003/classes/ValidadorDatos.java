@@ -1,6 +1,6 @@
 package es.medac.alu.ftt0003.classes;
 
-public class ValidadorDatosLibro {
+public class ValidadorDatos{
 
     /** TODO
      *   1.La validacion de ISBN  recive un Libro
@@ -76,6 +76,10 @@ public class ValidadorDatosLibro {
         if(resultado == arr[arr.length-1]) return true;
         return false;
 
+    }
+    //TODO
+    public static boolean validadorDNI(String dni){
+        return false;
     }
 
 }
