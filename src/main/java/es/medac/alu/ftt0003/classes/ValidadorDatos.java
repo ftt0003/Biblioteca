@@ -1,6 +1,11 @@
 package es.medac.alu.ftt0003.classes;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class ValidadorDatos{
+    private static final List<String> LETRAS_VALIDAS = Arrays.asList("T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S",
+            "Q","V","H","L","C","K","E");
 
     /** TODO
      *   1.La validacion de ISBN  recive un Libro
@@ -67,7 +72,6 @@ public class ValidadorDatos{
             }
         }
 
-
         int resto = resultado%10;
         resultado = 10 - resto;
 
@@ -77,8 +81,20 @@ public class ValidadorDatos{
         return false;
 
     }
-    //TODO
+    //TODO No valida correctamente
     public static boolean validadorDNI(String dni){
+
+        if(dni.length() != 9) return false;
+        if(!LETRAS_VALIDAS.contains(dni.substring(8))) return false;
+        if(comprobarLetraDni(Integer.parseInt(dni.substring(0,8)),dni.substring(8))) return true;
+
+        return false;
+    }
+
+    private static  boolean comprobarLetraDni(int num, String letra){
+        num = num%23;
+
+        if(LETRAS_VALIDAS.get(num).equals(letra))return true;
         return false;
     }
 

@@ -20,7 +20,7 @@ Tambien se quiere que datos como el ISBN sean verificados para asegurar la integ
 #### Constructores Clase Libro
 ```java
 public Libro(){...}//Constructor vacio
-public Libro(String titulo,String isbn,...){...}//Construcotr con parametros
+public Libro(String titulo, String isbn,...){...}//Construcotr con parametros
 ```
 ## Usuario
 ### Atributos

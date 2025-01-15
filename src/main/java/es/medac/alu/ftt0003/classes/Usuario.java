@@ -14,10 +14,13 @@ public class Usuario {
     }
 
     public Usuario(String dni,int edad){
-        this.dni = dni;
-        this.edad = edad;
-        this.librosEnPrestamo = new ArrayList<>();
-        this.infracciones = 0;
+        if(ValidadorDatos.validadorDNI(dni) && edad > 0){
+            this.dni = dni;
+            this.edad = edad;
+            this.librosEnPrestamo = new ArrayList<>();
+            this.infracciones = 0;
+        }
+
     }
 
     public int getEdad() {
