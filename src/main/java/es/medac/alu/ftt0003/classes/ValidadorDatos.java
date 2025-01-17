@@ -47,6 +47,7 @@ public class ValidadorDatos{
             arr[i] = Integer.parseInt(String.valueOf(cadena.charAt(i)));
         }
         return true;
+
     }
 
     private static boolean esValidoISBN10(int[] arr){
