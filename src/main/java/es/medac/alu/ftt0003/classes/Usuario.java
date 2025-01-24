@@ -20,7 +20,6 @@ public class Usuario {
             this.librosEnPrestamo = new ArrayList<>();
             this.infracciones = 0;
         }
-
     }
 
     public int getEdad() {
@@ -50,17 +49,34 @@ public class Usuario {
     public void setInfracciones(int infracciones) {
         this.infracciones = infracciones;
     }
+    public void addInfraciones(){
+        this.infracciones++;
+    }
+    public void  reducirInfracciones(){
+        if(this.infracciones > 0) infracciones--;
+    }
     public boolean addLibro(Libro lib){
+        if(this.infracciones >= 3){
+            System.out.println("Usuario no apto para prestamos...");
+            return false;
+        }
         return librosEnPrestamo.add(lib);
     }
 
-    //TODO
-    public boolean retornarLibro(){
+
+    public boolean retornarLibro(Libro l){
+        for(Libro elem: librosEnPrestamo){
+            if(l.equals(elem)){
+                librosEnPrestamo.remove(l);
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public String toString() {
+
         return "Usuario{" +
                 "dni='" + dni + '\'' +
                 ", edad=" + edad +

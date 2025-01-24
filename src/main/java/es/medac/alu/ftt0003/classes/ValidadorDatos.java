@@ -82,7 +82,7 @@ public class ValidadorDatos{
         return false;
 
     }
-    //TODO No valida correctamente
+
     public static boolean validadorDNI(String dni){
 
         if(dni.length() != 9) return false;

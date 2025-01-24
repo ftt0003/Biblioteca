@@ -7,6 +7,7 @@ public class Libro {
     private String editorial;
     private int edicion;
     private int paginas;
+    private int numCopias;
     private Categoria categoria;
 
     public Libro(){
@@ -17,7 +18,7 @@ public class Libro {
 
     public Libro(String titulo,String isbn, String autor, String editorial,
                  int edicion, int paginas, Categoria categoria){
-        //TODO Antes de asingarle los valores a los atributos se debe verificar que son correctos
+        //Validar datos de entrada
         if(ValidadorDatos.ValidarIsbn(isbn)){
             if(categoria == null) categoria = Categoria.SIN_CATEGORIZAR;
             this.titulo =titulo;
@@ -27,6 +28,7 @@ public class Libro {
             this.edicion = edicion;
             this.paginas = paginas;
             this.categoria = categoria;
+
         }else{
             this.autor = "Desconocido";
             this.categoria = Categoria.SIN_CATEGORIZAR;
@@ -99,9 +101,13 @@ public class Libro {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-    //TODO Metodo equals comparar libros
-    public boolean equals(){
-        return false;
+
+    public boolean equals(Libro l){
+        if(!(l.getClass().equals(Libro.class))) return false;
+        if(!l.getIsbn().equals(this.isbn)) return  false;
+        if(!l.getTitulo().equals(this.titulo)) return false;
+
+        return true;
     }
     //TODO Metodo toString
 
